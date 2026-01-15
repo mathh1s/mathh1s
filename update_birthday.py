@@ -54,17 +54,15 @@ else:
         months += 1
 
     remaining_days = (target - temp).days
+    weeks = remaining_days // 7
+    days = remaining_days % 7
 
-    if months == 0:
-        if remaining_days >= 7:
-            weeks = remaining_days // 7
-            days = remaining_days % 7
-            output = f"{weeks} weeks · {days} days"
-        else:
-            output = f"{remaining_days} days"
+    if months > 0:
+        output = f"{months} months · {weeks} weeks · {days} days"
+    elif weeks > 0:
+        output = f"{weeks} weeks · {days} days"
     else:
-        weeks = remaining_days // 7
-        output = f"{months} months · {weeks} weeks"
+        output = f"{days} days"
 
 with open("README.md", "r", encoding="utf-8") as f:
     content = f.read()
