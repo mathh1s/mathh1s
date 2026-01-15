@@ -33,11 +33,18 @@ elif -7 <= delta < -1:
     output = "birthday was: a week ago"
 
 else:
-    days_left = (next_year_birthday - today).days
+    if delta > 0:
+        target = this_year_birthday
+    else:
+        target = next_year_birthday
+
+    days_left = (target - today).days
+
     months = days_left // 30
     weeks = (days_left % 30) // 7
+
     output = f"In {months} months · {weeks} weeks"
-  
+
 with open("README.md", "r", encoding="utf-8") as f:
     content = f.read()
 
