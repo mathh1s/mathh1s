@@ -58,11 +58,15 @@ else:
     days = remaining_days % 7
 
     if months > 0:
-        output = f"{months} months · {weeks} weeks · {days} days"
+        output = (
+            f"In {unit(months, 'month')} · "
+            f"{unit(weeks, 'week')} · "
+            f"{unit(days, 'day')}"
+        )
     elif weeks > 0:
-        output = f"{weeks} weeks · {days} days"
+        output = f"{unit(weeks, 'week')} · {unit(days, 'day')}"
     else:
-        output = f"{days} days"
+        output = unit(days, "day")
 
 with open("README.md", "r", encoding="utf-8") as f:
     content = f.read()
