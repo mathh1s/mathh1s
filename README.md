@@ -1,16 +1,16 @@
-## Hi there 👋
+# mathis <img src="https://github.com/user-attachments/assets/12864f9d-6ebf-4ca8-87e3-f18fa72ba8a1" height="35"/>
 
-<!--
-**mathh1s/mathh1s** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Birthday in: In 8 months · 36 weeks
 
-Here are some ideas to get you started:
+Interested in music
+Tends to overthink
+Doesn’t plan far ahead
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+pronouns: any
+
+---
+
+### links
+
+- [homepage](https://mathiiis.de) <img src="https://cdn.nerimity.com/emojis/1589284310333173760.gif" height="25"/>
+- [cool thing](https://synth.mathiiis.de) <img src="https://cdn.nerimity.com/emojis/1590065816580304896.gif" height="25"/>
