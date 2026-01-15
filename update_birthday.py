@@ -1,4 +1,4 @@
-from datetime import date, timedelta
+from datetime import date
 import re
 
 BIRTHDAY_MONTH = 9
@@ -9,41 +9,62 @@ this_year_birthday = date(today.year, BIRTHDAY_MONTH, BIRTHDAY_DAY)
 next_year_birthday = date(today.year + 1, BIRTHDAY_MONTH, BIRTHDAY_DAY)
 
 delta = (this_year_birthday - today).days
-
 output = None
 
+
+def add_months(d, months):
+    year = d.year + (d.month - 1 + months) // 12
+    month = (d.month - 1 + months) % 12 + 1
+    day = min(d.day, [31,28,31,30,31,30,31,31,30,31,30,31][month - 1])
+    return date(year, month, day)
+
 if delta == 0:
-    output = 'today <img src="assets/birthday.webp" height="18" style="vertical-align: middle;" />'
+    output = 'today <img src="assets/birthday.gif" height="18" style="vertical-align: middle;" />'
 
 elif delta == 1:
     output = "tomorrow"
-  
-elif 1 < delta < 7:
-    output = f"{delta} days"
-  
-elif 7 <= delta < 30:
-    weeks = delta // 7
-    days = delta % 7
-    output = f"{weeks} weeks · {days} days"
 
 elif delta == -1:
     output = "birthday was: yesterday"
-  
+
 elif -7 <= delta < -1:
     output = "birthday was: a week ago"
 
+elif delta < -7:
+    target = next_year_birthday
+
+    months = 0
+    temp = today
+    while add_months(temp, 1) <= target:
+        temp = add_months(temp, 1)
+        months += 1
+
+    remaining_days = (target - temp).days
+    weeks = remaining_days // 7
+
+    output = f"{months} months · {weeks} weeks"
+
 else:
-    if delta > 0:
-        target = this_year_birthday
+    target = this_year_birthday
+
+    months = 0
+    temp = today
+    while add_months(temp, 1) <= target:
+        temp = add_months(temp, 1)
+        months += 1
+
+    remaining_days = (target - temp).days
+
+    if months == 0:
+        if remaining_days >= 7:
+            weeks = remaining_days // 7
+            days = remaining_days % 7
+            output = f"{weeks} weeks · {days} days"
+        else:
+            output = f"{remaining_days} days"
     else:
-        target = next_year_birthday
-
-    days_left = (target - today).days
-
-    months = days_left // 30
-    weeks = (days_left % 30) // 7
-
-    output = f"In {months} months · {weeks} weeks"
+        weeks = remaining_days // 7
+        output = f"{months} months · {weeks} weeks"
 
 with open("README.md", "r", encoding="utf-8") as f:
     content = f.read()
