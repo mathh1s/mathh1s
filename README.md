@@ -2,9 +2,9 @@
 
 Birthday in: In 8 months · 36 weeks
 
-Interested in music
-Tends to overthink
-Doesn’t plan far ahead
+Interested in music<br>
+Tends to overthink<br>
+Doesn't plan far ahead
 
 pronouns: any
 
