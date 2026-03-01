@@ -1,6 +1,6 @@
 # mathis <img src="https://github.com/user-attachments/assets/12864f9d-6ebf-4ca8-87e3-f18fa72ba8a1" height="35"/>
 
-Birthday in: In 7 months · 0 weeks · 2 days
+Birthday in: In 6 months · 4 weeks · 1 day
 
 Interested in music<br>
 Tends to overthink<br>
